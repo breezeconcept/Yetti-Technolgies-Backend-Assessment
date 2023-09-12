@@ -6,4 +6,6 @@ class UserProfile(models.Model):
     # Add your custom fields here
 
     def __str__(self):
-        return self.user.username
+        return self.user.email
+    
+# USERNAME_FIELD = 'email'

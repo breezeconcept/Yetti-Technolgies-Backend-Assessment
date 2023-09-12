@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Register</h2>
+
+  <br/>
+  {% if messages %}  
+        <ul>   
+            {% for message in messages %}  
+                <li>{{ message }}</li>  
+                {% endfor %}  
+        </ul>   
+    {% endif %}  
+    <br/>
+
+  <form method="POST" action="">
+    {% csrf_token %}
+
+    <table>  
+      {{ form.as_table }}  
+       <tr>  
+          <td></td>  
+          <td><input type="submit" name="submit" value="Register" /></td>  
+      </tr>  
+   </table> 
+    
+    <!-- {{ form.email.label }}<br/>
+    {{ form.email }}
+    <br/><br/>
+    {{ form.password1.label }}<br/>
+    {{ form.password1 }}
+    {% if form.password1.errors %}
+      <div>{{ form.password1.errors }}</div>   
+    {% endif %}
+    
+    <br/><br/>
+    {{ form.password2.label }}<br/>
+    {{ form.password2 }} -->
+
+    <!-- {{ form.as_p }} -->
+
+    <br/><br/>
+   
+    <!-- <button type="submit">Register</button> -->
+  </form>
+  <p><a href="{% url 'login' %}">Login</a></p>
+{% endblock %}
+
+
